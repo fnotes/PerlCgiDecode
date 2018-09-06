@@ -133,6 +133,10 @@ sub _multipart {
 			}
 			$rec = 0;
 
+		} elsif($rec==1) {
+
+			$val .= $_;
+
 		} elsif(m/$r3/) {
 
 			$key = $1;
@@ -149,10 +153,6 @@ sub _multipart {
 		} elsif($rec==0 && m/$r6/) {
 
 			$rec = 1;
-
-		} elsif($rec==1) {
-
-			$val .= $_;
 		}
 	}
 	@_FILES = @f;
