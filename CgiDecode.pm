@@ -54,6 +54,8 @@ sub _decode {
 
 		my($key, $val) = split /=/;
 
+		$val = '' unless defined $val;
+
 		$key =~ tr/+/ /;
 		$key =~ s/$r/pack('H2',$1)/eg;
 
