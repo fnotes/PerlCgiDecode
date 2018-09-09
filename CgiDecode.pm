@@ -46,7 +46,7 @@ sub _decode {
 	my $de = shift;
 	my %h = ();
 
-	return %h unless defined $buf;
+	return %h unless defined $$buf;
 	$de = '&' unless defined $de;
 
 	my $r = qr/%([a-fA-F0-9][a-fA-F0-9])/;
